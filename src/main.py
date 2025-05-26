@@ -1,9 +1,10 @@
+from split_nodes import split_nodes_delimiter
 from textnode import TextNode, TextType
 
 def main():
-    tnode = TextNode("this is a text", TextType.TEXT, "www.google.com.au.ua")
-    tode = TextNode("this is a text", TextType.TEXT, "www.google.com.au.ua")
-    print(tnode == tode)
-    print(tnode)
+    node = TextNode("This is text with a `code block``another code` word", TextType.TEXT)
+    new_nodes = split_nodes_delimiter([node], "`", TextType.CODE)
+    print(new_nodes)
+
 
 main()

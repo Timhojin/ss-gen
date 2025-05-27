@@ -68,7 +68,7 @@ def split_nodes_link(old_nodes):
             print(match_bracketed)
             first, text = text.split(match_bracketed, 1)
             new_nodes.append(TextNode(first, TextType.TEXT))
-            new_nodes.append(TextNode(alt, TextType.IMAGE, link))
+            new_nodes.append(TextNode(alt, TextType.LINK, link))
         if len(text):
             new_nodes.append(TextNode(text, TextType.TEXT))
         

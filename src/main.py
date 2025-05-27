@@ -3,11 +3,8 @@ from textnode import TextNode, TextType
 from split_nodes import *
 
 def main():
-    node = TextNode(
-        "This is text with a link [to boot dev](https://www.boot.dev) and [to youtube](https://www.youtube.com/@bootdotdev) ",
-        TextType.TEXT,
-    )
-    new_nodes = split_nodes_link([node])
-    for new_node in new_nodes:
-        print(new_node)
+    text = "This is **text** with an _italic_ word and a `code block` and an ![obi wan image](https://i.imgur.com/fJRm4Vk.jpeg) and a [link](https://boot.dev)"
+    nodes = text_to_textnodes(text)
+    for n in nodes:
+        print(n)
 main()

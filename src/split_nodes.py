@@ -65,7 +65,6 @@ def split_nodes_link(old_nodes):
         text = old_node.text
         for alt, link in matches:
             match_bracketed = (f"[{alt}]({link})")
-            print(match_bracketed)
             first, text = text.split(match_bracketed, 1)
             new_nodes.append(TextNode(first, TextType.TEXT))
             new_nodes.append(TextNode(alt, TextType.LINK, link))

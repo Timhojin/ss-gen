@@ -3,11 +3,8 @@ import sys
 
 def main():
     basepath = "/"
-    if sys.argv[0]:
-        if sys.argv[0][-1] != "/":
-            basepath = sys.argv[0] + "/"
-        else:
-            basepath = sys.argv[0]
+    if len(sys.argv) > 1:
+        basepath = sys.argv[1]
 
     src, dest = "static", "docs"
     copye(src, dest)

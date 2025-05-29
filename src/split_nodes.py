@@ -1,6 +1,12 @@
 from textnode import TextNode, TextType
 import re
 
+def extract_title(markdown):
+    for line in markdown.split("\n\n"):
+        if line.strip()[:2] == "# ":
+            return " ".join(line.strip("#").strip().split("\n"))
+    raise Exception("H1 not found")
+
 def split_nodes_delimiter(old_nodes, delimiter, text_type):
     new_nodes = []
 
